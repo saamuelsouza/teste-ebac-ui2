@@ -43,7 +43,7 @@ it('Deve fazer login com sucesso - Usando massa de dados', () => {
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thalissiamorais')
 });
 
-it.only('Deve fazer login com sucesso - Usando Fixture', () => {
+it('Deve fazer login com sucesso - Usando Fixture', () => {
     cy.fixture('perfil').then( dados => {
         cy.get('#username').type(dados.usuario)
     cy.get('#password').type(dados.senha, {log:false})
@@ -51,5 +51,10 @@ it.only('Deve fazer login com sucesso - Usando Fixture', () => {
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thalissiamorais')
 });
     })
+
+it.only('Deve fazer login com sucesso - Usando comandos customizados', () => {
+    cy.login('thalissiamorais@yahoo.com.br', 'teste123')
+    cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thalissiamorais')
+});
 
 })

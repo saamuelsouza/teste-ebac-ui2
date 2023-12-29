@@ -1,8 +1,9 @@
-/// reference types="cypress"/>
+/// <reference types="cypress"/>
 
-describe('Funcionalidade: Produtos ', () => {
+describe('Funcionalidade: produtos', () => {
+    
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        cy.visit('produtos')
     });
     
     it('Deve selecionar um produto da lista', () => {
@@ -10,7 +11,7 @@ describe('Funcionalidade: Produtos ', () => {
          //.first()
          //.last()
          //.eq(2)
-         .contains('Apollo Running Short')
+         .contains('Ajax Full-Zip Sweatshirt')
          .click()
          cy.get('#tab-title-description > a').should('contain', 'Descrição')
     });

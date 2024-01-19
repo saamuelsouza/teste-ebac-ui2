@@ -36,7 +36,7 @@ it('Deve exibir uma mensagem de erro ao inserir senha inválida', () => {
 
 });
 
-it('Deve fazer login com sucesso - Usando massa de dados', () => {
+it.only('Deve fazer login com sucesso - Usando massa de dados', () => {
     cy.get('#username').type(perfil.usuario)
     cy.get('#password').type(perfil.senha)
     cy.get('.woocommerce-form > .button').click()
@@ -52,7 +52,7 @@ it('Deve fazer login com sucesso - Usando Fixture', () => {
 });
     })
 
-it.only('Deve fazer login com sucesso - Usando comandos customizados', () => {
+it('Deve fazer login com sucesso - Usando comandos customizados', () => {
     cy.login('thalissiamorais@yahoo.com.br', 'teste123')
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thalissiamorais')
 });
